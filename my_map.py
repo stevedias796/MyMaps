@@ -5,6 +5,11 @@ from urllib.request import Request, urlopen
 
 app = Flask(__name__)
 
+@app.route('')
+def index():
+    return render_template("place_form.html")
+
+
 @app.route('/index')
 def index():
     return render_template("place_form.html")
@@ -36,7 +41,7 @@ def searching():
         gmap.scatter(lat, lon, '#faf600', size=40, marker=False)
         gmap.plot(lat, lon, 'red', edge_with=9.5)
 
-        gmap.draw("D:\\Steve\\templates\\display_map.html")
+        gmap.draw("display_map.html")
         return render_template("display_map.html")
     else:
         return render_template("place_form.html")  
