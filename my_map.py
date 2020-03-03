@@ -20,6 +20,8 @@ def searching():
             return HttpResponse("<p>Please Enter Source and Destination</p>")'''
         src_loc = src_loc.replace(" ", "+")
         des_loc = des_loc.replace(" ", "+")
+        resp = "<html><body>"+src_loc+", "+des_loc+"</body></html>"
+        return resp
         src_lat_and_lon = []
         des_lat_and_lon = []
         lat = []
