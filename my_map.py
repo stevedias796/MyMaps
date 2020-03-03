@@ -52,7 +52,6 @@ def get_lat_long(location, la_and_lo):
     #search_url = "https://www.google.co.in/maps/search/"+src_loc
     print(search_url)
     req = Request(search_url, headers={'User-Agent': 'Mozilla/5.0'})
-    return search_url
     web_byte = urlopen(req).read()
     return web_byte
     webpage = web_byte.decode() #to convert into utf-8
