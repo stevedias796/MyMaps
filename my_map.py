@@ -5,10 +5,6 @@ from urllib.request import Request, urlopen
 
 app = Flask(__name__)
 
-@app.route('')
-def index():
-    return render_template("place_form.html")
-
 
 @app.route('/index')
 def home():
