@@ -11,7 +11,7 @@ def index():
 
 
 @app.route('/index')
-def index():
+def home():
     return render_template("place_form.html")
 
 
