@@ -27,8 +27,8 @@ def searching():
         lat = []
         lon = []
         resp1 = get_lat_long(src_loc, src_lat_and_lon) #function to get lat and long of the location
-        resp = "<html><body>"+resp1+"</body></html>"
-        return resp
+        '''resp = "<html><body>"+resp1+"</body></html>"
+        return resp'''
         lat.append(src_lat_and_lon[0])
         lon.append(src_lat_and_lon[1])   
 
@@ -53,7 +53,7 @@ def get_lat_long(location, la_and_lo):
     print(search_url)
     req = Request(search_url, headers={'User-Agent': 'Mozilla/5.0'})
     web_byte = urlopen(req).read()
-    return web_byte
+    #return web_byte
     webpage = web_byte.decode() #to convert into utf-8
     soup = BeautifulSoup(webpage,"lxml")
 
