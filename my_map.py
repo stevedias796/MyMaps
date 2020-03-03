@@ -37,7 +37,7 @@ def searching():
         gmap.scatter(lat, lon, '#faf600', size=40, marker=False)
         gmap.plot(lat, lon, 'red', edge_with=9.5)
 
-        gmap.draw("templates\\display_map.html")
+        gmap.draw("MyMaps\\templates\\display_map.html")
         return render_template("display_map.html")
     else:
         return render_template("place_form.html")  
