@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import gmplot #for drawing maps and plotting 
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 
 app = Flask(__name__)
 
@@ -52,7 +53,10 @@ def get_lat_long(location, la_and_lo):
     #search_url = "https://www.google.co.in/maps/search/"+src_loc
     print(search_url)
     req = Request(search_url, headers={'User-Agent': 'Mozilla/5.0'})
-    web_byte = urlopen(req).read()
+    try:
+        web_byte = urlopen(req).read()
+    except HTTPError as e:
+        return e.read()
     #return web_byte
     webpage = web_byte.decode() #to convert into utf-8
     soup = BeautifulSoup(webpage,"lxml")
