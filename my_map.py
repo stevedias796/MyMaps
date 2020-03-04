@@ -28,8 +28,8 @@ def searching():
         lat = []
         lon = []
         resp1 = get_lat_long(src_loc, src_lat_and_lon) #function to get lat and long of the location
-        '''resp = "<html><body>"+resp1+"</body></html>"
-        return resp'''
+        resp = "<html><body>"+resp1+"</body></html>"
+        return resp
         lat.append(src_lat_and_lon[0])
         lon.append(src_lat_and_lon[1])   
 
