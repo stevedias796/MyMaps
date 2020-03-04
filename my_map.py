@@ -52,7 +52,7 @@ def get_lat_long(location, la_and_lo):
     search_url = "https://www.google.com/search?q="+location+"+logitude+latitude"
     #search_url = "https://www.google.co.in/maps/search/"+src_loc
     print(search_url)
-    req = Request(search_url, headers={'User-Agent': 'Mozilla/5.0'})
+    req = Request(search_url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0'})
     try:
         web_byte = urlopen(req).read()
     except HTTPError as e:
